@@ -1,3 +1,5 @@
+mod app;
+
 fn main() {
-    println!("Hello, world!");
+    yew::Renderer::<app::App>::new().render();
 }

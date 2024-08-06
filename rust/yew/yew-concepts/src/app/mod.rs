@@ -1,10 +1,10 @@
 use yew::prelude::*;
 mod concepts;
-use concepts::html_embedded_value::HtmlEmbeddedValue;
+use concepts::class_and_classes_macro::ClassAndClassesMacro;
 
 #[function_component]
 pub fn App() -> Html {
     html! {
-        <HtmlEmbeddedValue />
+        <ClassAndClassesMacro />
     }
 }

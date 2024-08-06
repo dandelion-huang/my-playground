@@ -1,1 +1,1 @@
-pub mod callbacks;
+pub mod callbacks_as_props;

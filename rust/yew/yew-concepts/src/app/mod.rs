@@ -1,10 +1,10 @@
 use yew::prelude::*;
 mod concepts;
-use concepts::web_sys_console::WebSysConsole;
+use concepts::wasm_bindgen_console::WasmBindgenConsole;
 
 #[function_component]
 pub fn App() -> Html {
     html! {
-        <WebSysConsole />
+        <WasmBindgenConsole />
     }
 }

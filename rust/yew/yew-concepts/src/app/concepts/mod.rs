@@ -1,1 +1,1 @@
-pub mod web_sys_console;
+pub mod wasm_bindgen_console;

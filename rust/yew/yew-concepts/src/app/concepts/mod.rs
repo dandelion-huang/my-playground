@@ -1,1 +1,1 @@
-pub mod wasm_bindgen_console;
+pub mod web_sys_mousemove;

@@ -1,10 +1,10 @@
 use yew::prelude::*;
 mod concepts;
-use concepts::wasm_bindgen_console::WasmBindgenConsole;
+use concepts::web_sys_mousemove::WebSysMouseMove;
 
 #[function_component]
 pub fn App() -> Html {
     html! {
-        <WasmBindgenConsole />
+        <WebSysMouseMove />
     }
 }

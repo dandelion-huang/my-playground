@@ -1,10 +1,10 @@
 use yew::prelude::*;
 mod concepts;
-use concepts::class_and_classes_macro::ClassAndClassesMacro;
+use concepts::web_sys_alert::WebSysAlert;
 
 #[function_component]
 pub fn App() -> Html {
     html! {
-        <ClassAndClassesMacro />
+        <WebSysAlert />
     }
 }

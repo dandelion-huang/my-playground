@@ -1,1 +1,1 @@
-pub mod web_sys_alert;
+pub mod web_sys_console;

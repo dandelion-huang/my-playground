@@ -1,1 +1,1 @@
-pub mod html_img;
+pub mod html_fragment;

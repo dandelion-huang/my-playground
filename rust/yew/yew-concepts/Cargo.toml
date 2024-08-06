@@ -12,5 +12,9 @@ rand = "0.8.5"
 version = "0.3.69"
 # Add more web-sys API's as you need them
 features = [
+  "console",
+  "DomRect",
+  "HtmlElement",
+  "MouseEvent",
   "Window",
 ]

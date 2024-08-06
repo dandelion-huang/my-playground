@@ -1,1 +1,1 @@
-pub mod html_basic;
+pub mod html_img;

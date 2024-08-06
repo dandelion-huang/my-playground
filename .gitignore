@@ -1,2 +1,6 @@
 # Misc
 /**/.DS_Store
+
+# Rust
+/rust/**/dist
+/rust/**/target

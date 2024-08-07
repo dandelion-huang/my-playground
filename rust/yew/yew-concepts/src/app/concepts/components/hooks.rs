@@ -1,29 +1,15 @@
+// src/app/concepts/components/callbacks_and_dom_events.rs
+// revise use_state to use_state_eq
+
+use super::callbacks_and_dom_events::ChildComponent;
 use web_sys::{console, js_sys::Date};
 use yew::{
-    classes, function_component, html, use_state, Callback, Html, MouseEvent, Properties,
-    UseStateHandle,
+    classes, function_component, html, use_state_eq, Callback, Html, MouseEvent, UseStateHandle,
 };
-
-#[derive(Properties, PartialEq)]
-pub struct Props {
-    pub children: Html,
-    pub update_counter: Callback<MouseEvent>,
-}
-
-#[function_component]
-pub fn ChildComponent(props: &Props) -> Html {
-    let onclick: Callback<_> = props.update_counter.clone();
-
-    html! {
-        <button class="bg-blue-500 px-4 py-2 rounded-md text-white hover:bg-blue-400 transtion-colors duration-200" {onclick}>
-            {props.children.clone()}
-        </button>
-    }
-}
 
 #[function_component]
 fn ParentComponent() -> Html {
-    let counter: UseStateHandle<u64> = use_state(|| 0u64); // use_state always re-render
+    let counter: UseStateHandle<u64> = use_state_eq(|| 0u64); // 使用 use_state_eq
     let update_counter: Callback<_> = {
         let counter: UseStateHandle<u64> = counter.clone();
         Callback::from(move |_: MouseEvent| counter.set(*counter + 1))
@@ -43,7 +29,7 @@ fn ParentComponent() -> Html {
 
     html! {
         <div class="flex items-center justify-center w-full h-screen bg-gray-100">
-            <div class={classes!("p-10", "space-y-2", bg_class)}>
+            <div class={classes!("p-10", "space-y-2", "rounded-md", bg_class)}>
                 <h1 class="text-2xl">{"Callbacks and DOM Events"}</h1>
                 <p>{"Click the button below to increment the counter."}</p>
                 <p>{format!("Counter: {}", *counter)}</p>
@@ -61,10 +47,10 @@ fn ParentComponent() -> Html {
                 </p>
                 <div class="!mt-4 space-x-2">
                     <ChildComponent {update_counter}>
-                        {"Click me!"}
+                        {"Re-render"}
                     </ChildComponent>
                     <ChildComponent update_counter={keep_counter}>
-                        {"Re-render!?"}
+                        {"Not re-render"}
                     </ChildComponent>
                 </div>
             </div>
@@ -73,8 +59,15 @@ fn ParentComponent() -> Html {
 }
 
 #[function_component]
-pub fn CallbacksAndDomEvents() -> Html {
+fn CallbacksAndDomEventsWithUseStateEq() -> Html {
     html! {
         <ParentComponent />
+    }
+}
+
+#[function_component]
+pub fn Hooks() -> Html {
+    html! {
+        <CallbacksAndDomEventsWithUseStateEq />
     }
 }

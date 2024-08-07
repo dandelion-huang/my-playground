@@ -1,1 +1,2 @@
-pub mod pure_components;
+pub mod callbacks_and_dom_events;
+pub mod hooks;

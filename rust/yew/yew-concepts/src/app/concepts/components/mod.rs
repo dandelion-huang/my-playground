@@ -1,1 +1,1 @@
-pub mod children;
+pub mod pure_components;

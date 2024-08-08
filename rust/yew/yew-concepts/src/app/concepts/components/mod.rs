@@ -1,2 +1,2 @@
-pub mod callbacks_and_dom_events;
-pub mod hooks;
+pub mod persistent_inputs;
+pub mod use_local_storage;

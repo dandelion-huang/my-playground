@@ -1,15 +1,13 @@
 // src/app/concepts/components/callbacks_and_dom_events.rs
-// revise use_state to use_state_eq
+// using use_effect_with to log only when the state changes
 
 use super::callbacks_and_dom_events::ChildComponent;
 use web_sys::{console, js_sys::Date};
-use yew::{
-    classes, function_component, html, use_state_eq, Callback, Html, MouseEvent, UseStateHandle,
-};
+use yew::prelude::*;
 
 #[function_component]
 fn ParentComponent() -> Html {
-    let counter: UseStateHandle<u64> = use_state_eq(|| 0u64); // 使用 use_state_eq
+    let counter: UseStateHandle<u64> = use_state(|| 0u64);
     let update_counter: Callback<_> = {
         let counter: UseStateHandle<u64> = counter.clone();
         Callback::from(move |_: MouseEvent| counter.set(*counter + 1))
@@ -19,13 +17,18 @@ fn ParentComponent() -> Html {
         Callback::from(move |_: MouseEvent| counter.set(*counter))
     };
 
-    let bg_class = match *counter % 2 == 0 {
+    {
+        let counter: UseStateHandle<u64> = counter.clone();
+        use_effect_with(counter, move |counter: &UseStateHandle<u64>| {
+            let timestamp: f64 = Date::now();
+            console::log_1(&format!("Counter: {}, Timestamp: {}", **counter, timestamp).into());
+        });
+    }
+
+    let bg_class: &str = match *counter % 2 == 0 {
         true => "bg-red-100",
         false => "bg-green-100",
     };
-
-    let timestamp = Date::now();
-    console::log_1(&format!("Counter: {}, Timestamp: {}", *counter, timestamp).into());
 
     html! {
         <div class="flex items-center justify-center w-full h-screen bg-gray-100">
@@ -59,7 +62,7 @@ fn ParentComponent() -> Html {
 }
 
 #[function_component]
-fn CallbacksAndDomEventsWithUseStateEq() -> Html {
+fn CallbacksAndDomEventsWithUseEffectWtih() -> Html {
     html! {
         <ParentComponent />
     }
@@ -68,6 +71,6 @@ fn CallbacksAndDomEventsWithUseStateEq() -> Html {
 #[function_component]
 pub fn Hooks() -> Html {
     html! {
-        <CallbacksAndDomEventsWithUseStateEq />
+        <CallbacksAndDomEventsWithUseEffectWtih />
     }
 }

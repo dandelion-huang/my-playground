@@ -1,8 +1,19 @@
 {
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.prettier": "explicit",
+      "source.fixAll.stylelint": "explicit",
+      "source.fixAll.markdownlint": "explicit",
+      "source.organizeImports": "explicit",
+      "source.sortMembers": "explicit"
+    }
+  },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.formatOnSave": true
   },
+  "json.schemaDownload.enable": false,
   "workbench.colorCustomizations": {
     "activityBar.background": "#0E3519",
     "titleBar.activeBackground": "#144A24",

@@ -1,0 +1,11 @@
+{
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#063516",
+    "titleBar.activeBackground": "#084B1F",
+    "titleBar.activeForeground": "#F3FEF6"
+  }
+}

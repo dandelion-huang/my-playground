@@ -21,4 +21,4 @@ function ChildComponent() {
   );
 }
 
-export { ParentComponent as ContextApiComponent };
+export { ParentComponent as ContextProviderDemo };

@@ -1,13 +1,14 @@
 // https://www.cythilya.tw/2023/05/25/implement-redux-by-react-context-api-and-useReducer/
 
-import { Greeting } from "./Greeting";
-import { ReducerContextProvider } from "./ReducerContextProvider";
+import { GreetingWithRtk } from "./GreetingWithRtk";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 function App() {
   return (
-    <ReducerContextProvider>
-      <Greeting />
-    </ReducerContextProvider>
+    <Provider store={store}>
+      <GreetingWithRtk />
+    </Provider>
   );
 }
 

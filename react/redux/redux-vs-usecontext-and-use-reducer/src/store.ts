@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { helloSlice } from "./helloSlice";
+import { helloSlice } from "./features/hello/helloSlice";
 
 const store = configureStore({
   reducer: {

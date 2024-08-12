@@ -1,6 +1,6 @@
-import { setMessage, setName } from "./store/helloSlice";
+import { setMessage, setName } from "./features/hello/helloSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./store/store";
+import { RootState } from "./store";
 
 function GreetingWithRtk() {
   const dispatch = useDispatch();

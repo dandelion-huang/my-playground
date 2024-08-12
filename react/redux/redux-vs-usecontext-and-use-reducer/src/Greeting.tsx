@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ReducerContext } from "./ReducerContextProvider";
+import { ReducerContext } from "./contexts/ReducerContextProvider";
 
 function Greeting() {
   const [state, dispatch] = useContext(ReducerContext)!;

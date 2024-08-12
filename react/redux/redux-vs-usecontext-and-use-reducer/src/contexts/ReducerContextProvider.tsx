@@ -1,5 +1,5 @@
 import { createContext, useReducer, Dispatch } from "react";
-import { reducers, State, Action } from "./reducers";
+import { reducers, State, Action } from "../reducers/reducers";
 
 const ReducerContext = createContext<[State, Dispatch<Action>] | null>(null);
 export { ReducerContext };

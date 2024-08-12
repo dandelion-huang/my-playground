@@ -1,7 +1,7 @@
-import { ContextApiComponent } from "./ContextApiComponent";
+import { UseReducerComponent } from "./UseReducerComponent";
 
 function App() {
-  return <ContextApiComponent />;
+  return <UseReducerComponent />;
 }
 
 export default App;

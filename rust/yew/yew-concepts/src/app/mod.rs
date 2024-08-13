@@ -1,10 +1,10 @@
 use yew::{function_component, html, Html};
 mod concepts;
-use concepts::components::node_ref_scroll_to_li::NodeRefScrollToLi;
+use concepts::components::generic_component::MyGenericComponent;
 
 #[function_component]
 pub fn App() -> Html {
     html! {
-        <NodeRefScrollToLi />
+        <MyGenericComponent />
     }
 }

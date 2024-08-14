@@ -14,8 +14,7 @@ version = "0.3.69"
 # Add more web-sys API's as you need them
 features = [
   "console",
-  "Element",
+  "CustomEvent",
   "HtmlElement",
-  "ScrollIntoViewOptions",
-  "ScrollBehavior",
+  "KeyboardEvent",
 ]

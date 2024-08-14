@@ -1,1 +1,1 @@
-pub mod target_with_jscast;
+pub mod target_with_targetcast;

@@ -1,1 +1,1 @@
-pub mod manual_event_listener_with_closure;
+pub mod manual_event_listener_with_gloo;

@@ -1,10 +1,18 @@
-use yew::{function_component, html, Html};
+use yew::prelude::*;
 mod concepts;
-use concepts::html::conditional_rendering::ConditionalRendering;
+use concepts::html::{
+    producer::Producer, subscriber::Subscriber, theme_ctx::ThemeProvider,
+    theme_wrapper::ThemeWrapper,
+};
 
 #[function_component]
 pub fn App() -> Html {
     html! {
-        <ConditionalRendering />
+        <ThemeProvider>
+            <ThemeWrapper>
+                <Producer />
+                <Subscriber />
+            </ThemeWrapper>
+        </ThemeProvider>
     }
 }

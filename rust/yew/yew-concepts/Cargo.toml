@@ -7,12 +7,14 @@ edition = "2021"
 yew = { version = "0.21.0", features = ["csr"] }
 serde = { version = "1.0.204", features = ["derive"] }
 serde_json = "1.0.125"
+gloo = "0.11.0"
 gloo-net = "0.6.0"
+gloo-timers = { version = "0.3.0", features = ["futures"] }
 async-std = { version = "1.12.0", features = ["unstable"] } 
 
 [dependencies.web-sys]
 version = "0.3.69"
 # Add more web-sys API's as you need them
 features = [
-  "console",
+  "HtmlInputElement",
 ]
